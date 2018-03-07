@@ -18,7 +18,7 @@ def subtract(image):
 
 
 def center_crop(image, crop_size):
-    crop_size = check_size(crop_size)
+    crop_size = (crop_size, crop_size)
     h, w, _ = image.shape
     top = (h - crop_size[0]) // 2
     left = (w - crop_size[1]) // 2
@@ -28,7 +28,7 @@ def center_crop(image, crop_size):
     return image
 
 def random_crop(image, crop_size):
-    crop_size = check_size(crop_size)
+    crop_size = (crop_size, crop_size)
     h, w, _ = image.shape
     top = np.random.randint(0, h - crop_size[0])
     left = np.random.randint(0, w - crop_size[1])
